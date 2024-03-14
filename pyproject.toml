@@ -1,0 +1,82 @@
+[build-system]
+requires = ["poetry-core>=1.9.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_incomplete_defs = true
+disallow_subclassing_any = true
+disallow_untyped_calls = true
+disallow_untyped_decorators = true
+disallow_untyped_defs = true
+files = "qualify/**/*.py,tests/**/*.py"
+implicit_reexport = false
+no_implicit_optional = true
+strict_equality = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unused_ignores = true
+
+[tool.poetry]
+name = "qualify"
+version = "0.1.0"
+description = "Import top-level modules from a directory not on `sys.path`"
+readme = [
+    "README.md",
+    "USAGE.md",
+]
+authors = [
+    "Claudia Pellegrino <clau@tiqua.de>",
+]
+license = "Apache-2.0"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+colorama = "*"
+fire = "*"
+wrapt = "^1.16.0"
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "*"
+mypy = ">=1.8"
+myst-parser = ">=2.0.0"
+pdoc = ">=14.0"
+poethepoet = ">=0.24"
+pylint = ">=3.0"
+pytest = "*"
+sphinx = ">=7.1.2,<7.2.0"
+types-colorama = "*"
+
+[tool.poe]
+verbosity = -1
+
+[tool.poe.tasks]
+tasks.cmd = "poe -v"
+tasks.help = "List available tasks"
+doc.cmd = "sphinx-build -aqEW -b man doc/sphinx build/man"
+doc.help = "Generate documentation"
+html.cmd = "pdoc qualify !qualify.settings"
+html.help = "Browse HTML documentation"
+linter.cmd = "pylint --enable-all-extensions qualify"
+linter.help = "Check for style violations"
+man.cmd = "man build/man/qualify.3"
+man.help = "Open manual page"
+tests.cmd = "pytest"
+tests.help = "Run test suite"
+typecheck.cmd = "mypy"
+typecheck.help = "Run static type checker"
+
+[tool.pyright]
+reportGeneralTypeIssues = "none"
+reportMissingImports = "none"
+reportUnsupportedDunderAll = "none"
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+xfail_strict = true
