@@ -2,9 +2,9 @@
 /debian/.debhelper/generated/
 /debian/debhelper-build-stamp
 /debian/files
-/debian/qualify/
-/debian/qualify.*.debhelper
-/debian/qualify.substvars
+/debian/python3-qualify/
+/debian/python3-qualify.*.debhelper
+/debian/python3-qualify.substvars
 /dist/
 /.pc/
 /.venv/

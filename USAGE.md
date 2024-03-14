@@ -5,8 +5,8 @@
 Paste into `__init__.py` of the affected package:
 
 ```py
-import qualify
-qualify.enable_submodules(__name__)
+import python_qualify
+python_qualify.enable_submodules(__name__)
 ```
 
 # Description
@@ -42,6 +42,6 @@ Running `import d.main` will add the following modules to
 - `d.main`
 - `d.utils`
 
-Note that unlike similar implementations, the `qualify` package does
-not touch `sys.path`. This helps prevent unwanted modules from being
-exposed to the global namespace.
+Note that unlike similar implementations, the `python_qualify` package
+does not touch `sys.path`. This helps prevent unwanted modules from
+being exposed to the global namespace.

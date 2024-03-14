@@ -1,5 +1,5 @@
-Welcome to qualify's documentation!
-====================================
+Welcome to python_qualify's documentation!
+==========================================
 
 .. toctree::
    :maxdepth: 2

@@ -5,7 +5,7 @@ import sys
 
 import pytest
 
-from qualify.clone import clone
+from python_qualify.clone import clone
 
 
 @pytest.fixture(autouse=True)

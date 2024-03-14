@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-22.04
     environment:
       name: pypi
-      url: https://pypi.org/p/qualify
+      url: https://pypi.org/p/python-qualify
     permissions:
       contents: write
       id-token: write
