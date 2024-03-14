@@ -1,13 +1,13 @@
 """Clones a loaded module under a different name."""
 
-import importlib
+from importlib.abc import Loader
 from importlib.machinery import ModuleSpec
 from types import ModuleType
 
 from .clone import clone
 
 
-class CloneLoader(importlib.abc.Loader):
+class CloneLoader(Loader):
     """Clones a loaded module under a different name."""
 
     def __init__(self, source: ModuleType, dest_name: str) -> None:
