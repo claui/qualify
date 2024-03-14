@@ -27,13 +27,9 @@ successfully.
 Running `import d.main` will add the following modules to
 `sys.modules`:
 
+- `d`
 - `d.main`
 - `d.utils`
-- `utils`
-
-The module `utils` is only there as a side effect, and can be safely
-deleted from `sys.modules`. If you want to delete it, run
-`prune_submodules('d')` after your `import`s.
 
 Note that unlike similar implementations, the `qualify` package does
 not touch `sys.path`. This helps prevent unwanted modules from being

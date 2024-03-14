@@ -33,30 +33,3 @@ def enable_submodules(package: Union[str, ModuleType]) -> None:
         May be a package as a `ModuleType` or a package name.
     """
     sys.meta_path.insert(0, SubmoduleFinder(package))
-
-
-def prune_submodules(package: Union[str, ModuleType]) -> None:
-    """Removes transitive imports from `sys.modules`.
-    Calling this function is optional, but recommended to keep the
-    global namespace clean from unwanted top-level modules.
-
-    Example: Directory `d` contains modules `a` and `b`.
-    `a` imports `b`.
-
-    Running `enable_submodules('d'); import d.a` will add four
-    new entries to `sys.modules`: `d`, `d.a`, `d.b`, and `b`.
-    The first three are legitimate, but `b` has been added as a
-    side effect of importing `d.a`, and is now polluting the global
-    namespace of top-level modules.
-
-    To undo this side effect, call `prune_submodules('d')`.
-
-    :param package:
-        Controls which top-level modules are to be removed from
-        `sys.modules`.
-        All top-level modules which have been added to `sys.modules`
-        as a side effect of `enable('package')` will be removed.
-
-        May be a module object or a string.
-    """
-    raise NotImplementedError
