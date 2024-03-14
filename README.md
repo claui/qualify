@@ -31,9 +31,9 @@ Running `import d.main` will add the following modules to
 - `d.main`
 - `d.utils`
 
-Note that unlike similar implementations, the `qualify` package does
-not touch `sys.path`. This helps prevent unwanted modules from being
-exposed to the global namespace.
+Note that unlike similar implementations, the `python_qualify` package
+does not touch `sys.path`. This helps prevent unwanted modules from
+being exposed to the global namespace.
 
 ## Installation
 
@@ -42,24 +42,25 @@ exposed to the global namespace.
 To install qualify from PyPI, open a shell and run:
 
 ```shell
-pip install qualify
+pip install python-qualify
 ```
 
 If that doesn’t work, try:
 
 ```shell
-python3 -m pip install qualify
+python3 -m pip install python-qualify
 ```
 
 ### Installing from the AUR
 
 Direct your favorite
 [AUR helper](https://wiki.archlinux.org/title/AUR_helpers) to the
-`qualify` package.
+`python-qualify` package.
 
 ## Usage
 
-See [`USAGE.md`](https://github.com/claui/qualify/blob/main/USAGE.md) or `man qualify` for details.
+See [`USAGE.md`](https://github.com/claui/qualify/blob/main/USAGE.md)
+or `man python_qualify` for details.
 
 ## Contributing to qualify
 

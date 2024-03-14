@@ -1,4 +1,4 @@
-"""The primary module in qualify.
+"""The primary module in python_qualify.
 
 Contains convenience functions to enable `import` for top-level
 modules which reside in a directory that is not on `sys.path`."""

@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'qualify'
+project = 'python_qualify'
 author = 'Claudia Pellegrino <clau@tiqua.de>'
 description = 'Import top-level modules from a directory not on `sys.path`'
 

@@ -168,7 +168,7 @@ poetry run poe doc
 
 If you get errors after a Git pull, refresh your dependencies:
 
-```
+```shell
 poetry update
 ```
 
@@ -185,6 +185,6 @@ poetry install
 
 To check qualify’s dependencies for compatible updates, run:
 
-```
+```shell
 poetry update --dry-run
 ```

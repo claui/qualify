@@ -98,7 +98,7 @@ jobs:
     runs-on: ubuntu-22.04
     environment:
       name: testpypi
-      url: https://test.pypi.org/p/qualify
+      url: https://test.pypi.org/p/python-qualify
     permissions:
       id-token: write
     steps:
