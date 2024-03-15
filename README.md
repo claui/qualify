@@ -66,6 +66,20 @@ or `man python_qualify` for details.
 
 See [`CONTRIBUTING.md`](https://github.com/claui/qualify/blob/main/CONTRIBUTING.md).
 
+## See also
+
+The following projects are similar to `qualify` but have slightly
+different goals:
+
+- [fiximport](https://pypi.org/project/fiximport/)
+  by [@ELanning](https://github.com/ELanning)
+
+- [import_relative](https://pypi.org/project/import_relative/)
+  by PyPI user [rocky](https://pypi.org/user/rocky/)
+
+- [relativize-imports](https://pypi.org/project/relativize-imports/)
+  by [@reallyliri](https://github.com/reallyliri)
+
 ## License
 
 Copyright (c) 2024 Claudia Pellegrino
