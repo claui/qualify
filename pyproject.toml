@@ -20,7 +20,7 @@ warn_unused_ignores = true
 
 [tool.poetry]
 name = "python-qualify"
-version = "0.1.0"
+version = "0.1.1"
 description = "Import top-level modules from a directory not on `sys.path`"
 readme = [
     "README.md",
