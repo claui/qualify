@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'python_qualify'
+project = 'qualify'
 author = 'Claudia Pellegrino <clau@tiqua.de>'
 description = 'Import top-level modules from a directory not on `sys.path`'
 
@@ -30,7 +30,7 @@ exclude_patterns = []
 
 man_pages = [(
     'index',
-    project.lower(),
+    'qualify',
     description,
     [author],
     3,

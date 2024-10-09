@@ -59,8 +59,7 @@ Direct your favorite
 
 ## Usage
 
-See [`USAGE.md`](https://github.com/claui/qualify/blob/main/USAGE.md)
-or `man python_qualify` for details.
+See [`USAGE.md`](https://github.com/claui/python-qualify/blob/main/USAGE.md) or `man qualify` for details.
 
 ## Contributing to qualify
 

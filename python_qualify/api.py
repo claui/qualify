@@ -8,6 +8,9 @@ from types import ModuleType
 from typing import Union
 
 from .finder import SubmoduleFinder
+from .logging import get_logger
+
+logger = get_logger(__name__)
 
 
 def enable_submodules(package: Union[str, ModuleType]) -> None:
@@ -32,4 +35,7 @@ def enable_submodules(package: Union[str, ModuleType]) -> None:
 
         May be a package as a `ModuleType` or a package name.
     """
+    logger.debug(
+        'Enabling qualified submodules for package: %s', package
+    )
     sys.meta_path.insert(0, SubmoduleFinder(package))

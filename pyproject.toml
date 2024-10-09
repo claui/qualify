@@ -22,13 +22,8 @@ warn_unused_ignores = true
 name = "python-qualify"
 version = "0.1.1"
 description = "Import top-level modules from a directory not on `sys.path`"
-readme = [
-    "README.md",
-    "USAGE.md",
-]
-authors = [
-    "Claudia Pellegrino <clau@tiqua.de>",
-]
+readme = ["README.md", "USAGE.md"]
+authors = ["Claudia Pellegrino <clau@tiqua.de>"]
 license = "Apache-2.0"
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -39,7 +34,6 @@ classifiers = [
 [tool.poetry.dependencies]
 python = ">=3.8"
 colorama = "*"
-fire = "*"
 wrapt = "^1.16.0"
 
 [tool.poetry.group.dev.dependencies]
@@ -65,7 +59,7 @@ html.cmd = "pdoc python_qualify !python_qualify.settings"
 html.help = "Browse HTML documentation"
 linter.cmd = "pylint --enable-all-extensions python_qualify"
 linter.help = "Check for style violations"
-man.cmd = "man build/man/python_qualify.3"
+man.cmd = "man build/man/qualify.3"
 man.help = "Open manual page"
 tests.cmd = "pytest"
 tests.help = "Run test suite"
@@ -80,3 +74,9 @@ reportUnsupportedDunderAll = "none"
 [tool.pytest.ini_options]
 testpaths = "tests"
 xfail_strict = true
+
+[tool.ruff]
+line-length = 72
+
+[tool.ruff.format]
+quote-style = "single"
