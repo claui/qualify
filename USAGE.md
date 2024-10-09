@@ -45,3 +45,11 @@ Running `import d.main` will add the following modules to
 Note that unlike similar implementations, the `python_qualify` package
 does not touch `sys.path`. This helps prevent unwanted modules from
 being exposed to the global namespace.
+
+# Environment
+
+qualify supports the following environment variable:
+
+`QUALIFY_DEBUG`
+: If set to a non-zero value, causes qualify to enable debug-level
+: logging.
