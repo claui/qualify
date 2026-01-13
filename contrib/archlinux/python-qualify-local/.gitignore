@@ -1,0 +1,6 @@
+/src/
+/pkg/
+/python-qualify/
+*.log
+*.pkg.*
+*.tar.*

@@ -6,32 +6,78 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+# pylint: skip-file
+# type: ignore
+
 project = 'qualify'
 author = 'Claudia Pellegrino <clau@tiqua.de>'
-description = 'Import top-level modules from a directory not on `sys.path`'
+description = (
+    'Import top-level modules from a directory not on `sys.path`'
+)
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
+    'autoapi.extension',
     'myst_parser',
     'sphinx.ext.autodoc',
-    'sphinx.ext.napoleon',
 ]
+
+autoapi_dirs = ['../../python_qualify']
+autoapi_keep_files = True
+autoapi_ignore = ['**/stubs/**']
+autoapi_options = [
+    'members',
+    'undoc-members',
+    'show-inheritance',
+    'show-module-summary',
+    'special-members',
+    'imported-members',
+]
+autoapi_type = 'python'
+autodoc_typehints = 'description'
+
+html_theme = 'sphinx_rtd_theme'
 
 myst_enable_extensions = [
     'deflist',
 ]
 
+
+def skip_module(app, what, name, obj, skip, options):
+    if what != 'module':
+        return skip
+    if name in [
+        'python_qualify.config',
+        'python_qualify.settings',
+        'python_qualify.version',
+    ]:
+        return True
+    return skip
+
+
+def setup(sphinx):
+    sphinx.connect('autoapi-skip-member', skip_module)
+
+
 templates_path = []
-exclude_patterns = []
+exclude_patterns = [
+    '**/python_qualify/config/**',
+    '**/python_qualify/settings/**',
+    '**/python_qualify/version/**',
+]
 
 # Man page output
 
-man_pages = [(
-    'index',
-    'qualify',
-    description,
-    [author],
-    3,
-)]
+man_pages = [
+    (
+        'usage',
+        'python-qualify',
+        description,
+        [author],
+        3,
+    )
+]
+
+man_show_urls = True

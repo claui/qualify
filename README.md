@@ -59,7 +59,13 @@ Direct your favorite
 
 ## Usage
 
-See [`USAGE.md`](https://github.com/claui/python-qualify/blob/main/USAGE.md) or `man qualify` for details.
+See
+[`USAGE.md`](https://github.com/claui/python-qualify/blob/main/USAGE.md)
+or `man qualify` for details.
+
+You can also browse the
+[API reference on Read the Docs](https://python-qualify.readthedocs.io/en/stable/autoapi/python_qualify/)
+for details.
 
 ## Contributing to qualify
 
@@ -81,8 +87,8 @@ different goals:
 
 ## License
 
-Copyright (c) 2024 Claudia Pellegrino
+Copyright (c) 2026 Claudia Pellegrino
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
-For a copy of the License, see [LICENSE](LICENSE).
+For a copy of the License, see [LICENSE](https://raw.githubusercontent.com/claui/python-qualify/refs/heads/main/LICENSE).
