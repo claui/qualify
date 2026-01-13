@@ -6,6 +6,7 @@
 /debian/python3-qualify.*.debhelper
 /debian/python3-qualify.substvars
 /dist/
+/doc/sphinx/autoapi/
 /.pc/
 /.venv/
 *.egg-info

@@ -1,0 +1,6 @@
+/src/
+/pkg/
+/qualify/
+*.log
+*.pkg.*
+*.tar.*
