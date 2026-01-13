@@ -1,15 +1,15 @@
 # Maintainer: Claudia Pellegrino <clau@tiqua.de>
 
 pkgname=python-qualify-git
+_gitpkgname=qualify
 pkgver=VERSION
 pkgrel=1
-pkgdesc='Collection of convenience functions to patch `pyproject.toml` in place'
+pkgdesc='Import top-level modules from a directory not on `sys.path`'
 arch=('any')
 url='https://github.com/claui/python-qualify'
 license=('Apache-2.0')
 depends=(
-  'python-colorama'
-  'python-fire'
+  'python-wrapt'
 )
 makedepends=(
   'git'
@@ -26,11 +26,11 @@ checkdepends=('python-pytest')
 provides=('python-qualify')
 conflicts=('python-qualify')
 options=('!strip')
-source=("git+file://$(git rev-parse --show-toplevel)")
+source=("git+file://$(git rev-parse --show-toplevel)#commit=$(git rev-parse --short HEAD)")
 sha512sums=('SKIP')
 
 pkgver() {
-  cd "${srcdir}/python-qualify"
+  cd "${srcdir}/${_gitpkgname}"
   printf "%s.r%s.%s" \
     "$(hatch version)" \
     "$(git rev-list --count HEAD)" \
@@ -38,7 +38,7 @@ pkgver() {
 }
 
 build() {
-  cd "${srcdir}/python-qualify"
+  cd "${srcdir}/${_gitpkgname}"
   echo >&2 'Building wheel'
   python -m build --wheel --no-isolation
 
@@ -47,12 +47,12 @@ build() {
 }
 
 check() {
-  cd "${srcdir}/python-qualify"
+  cd "${srcdir}/${_gitpkgname}"
   python -m pytest
 }
 
 package() {
-  cd "${srcdir}/python-qualify"
+  cd "${srcdir}/${_gitpkgname}"
 
   echo >&2 'Packaging the wheel'
   python -I -m installer --destdir="${pkgdir}" dist/*.whl

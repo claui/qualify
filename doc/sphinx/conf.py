@@ -49,7 +49,6 @@ def skip_module(app, what, name, obj, skip, options):
     if what != 'module':
         return skip
     if name in [
-        'python_qualify.config',
         'python_qualify.settings',
         'python_qualify.version',
     ]:
@@ -63,7 +62,6 @@ def setup(sphinx):
 
 templates_path = []
 exclude_patterns = [
-    '**/python_qualify/config/**',
     '**/python_qualify/settings/**',
     '**/python_qualify/version/**',
 ]

@@ -3,13 +3,12 @@
 pkgname=python-qualify
 pkgver=0.1.0
 pkgrel=1
-pkgdesc='Collection of convenience functions to patch `pyproject.toml` in place'
+pkgdesc='Import top-level modules from a directory not on `sys.path`'
 arch=('any')
 url='https://github.com/claui/python-qualify'
 license=('Apache-2.0')
 depends=(
-  'python-colorama'
-  'python-fire'
+  'python-wrapt'
 )
 makedepends=(
   'python-build'

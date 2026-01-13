@@ -113,3 +113,19 @@ To update the `doc/requirements.txt` file for Read the Docs, run:
 ```shell
 uv export --only-group doc --output-file doc/requirements.txt
 ```
+
+### Rebuild `python-qualify-local` for Arch Linux packaging tests
+
+From a clean Git working tree, run:
+
+```bash
+(
+  set -ex
+  git add -p -- contrib/archlinux/python-qualify-local/PKGBUILD
+  rm -fv contrib/archlinux/python-qualify-local/*.tar.zst
+  env -C contrib/archlinux/python-qualify-local makepkg -cfs
+  git checkout -- contrib/archlinux/python-qualify-local/PKGBUILD
+  namcap contrib/archlinux/python-qualify-local/PKGBUILD
+  sudo pacman -U contrib/archlinux/python-qualify-local/*.tar.zst
+)
+```

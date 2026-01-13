@@ -20,7 +20,7 @@ Rules-Requires-Root: no
 
 Package: python3-qualify
 Architecture: all
-Depends: ${python3:Depends}, ${misc:Depends}, python3-colorama
+Depends: ${python3:Depends}, ${misc:Depends}, python3-wrapt
 Description: Import top-level modules from a directory not on `sys.path`
  A Python package that allows you to `import` top-level modules which
  reside in a directory that is not on `sys.path`.
